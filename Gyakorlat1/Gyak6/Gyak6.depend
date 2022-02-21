@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1644675725 source:d:\egyetem\cprogramming\párhuzamos alg\gyak6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
