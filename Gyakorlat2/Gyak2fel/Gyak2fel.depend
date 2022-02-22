@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1645555569 source:d:\egyetem\cprogramming\párhuzamos alg\masodik_gyak\gyak2fel\main.c
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	<Windows.h>
+
