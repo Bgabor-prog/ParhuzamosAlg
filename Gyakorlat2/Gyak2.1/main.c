@@ -2,11 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdbool.h>
+#include <Windows.h>
 
 int genRandArray(int lower,int upper);
 int SetArraySize();
 void UploadArray(int array[],int size,int lower,int upper);
 bool DuplicateElement();
+double setChanceForDupl(double upper);
+void UniqueArray(int array[],int size);
 
 int main()
 {
@@ -21,39 +24,47 @@ int main()
     UploadArray(Array,m,lower,upper);
 
     for(int i;i<m;i++){
-
         printf("[%d]:%d\n",i+1,Array[i]);
     }
+    UniqueArray(Array,m);
 
     return 0;
 }
-bool DuplicateElement(){
-  float lower = 0;
-  float upper = 1;
 
-  srand((unsigned int)time(NULL));
-  doublr result = (upper - lower) * ((float)rand() / RAND_MAX) + lower;
-    printf("%.1f\n",result);
-    if(result > 0.5){
-        printf("Igaz\n");
-        return true;
-    }else if(result < 0.5){
-        printf("Hamis\n");
-        return false;
-    }else
+void UniqueArray(int array[],int size){
+    int db = 0;
+    bool unique = false;
+    bool notunique = false;
+    for(int i=0;i<size;i++){
+        for(int j = i+1;j<size-1;j++){
+             if (i != j) {
+                if (array[i] == array[j]) {
+                     printf("Talaltam azonost!\n");
+                     notunique = true;
+                     break;
+                }
+                unique = true;
+            }
 
-    return false;
+        }
+    }
+    if(unique && !notunique){
+        printf("Minden elem egyedi!\n");
+    }
 }
 
 
 void UploadArray(int array[],int size,int lower,int upper){
-    bool decide = false;
+    srand((unsigned int)time(NULL));
+    int max = 1;
 
-    decide = DuplicateElement();
     for(int i = 0;i<size;i++){
-        array[i] = genRandArray(lower,upper);
-        if(decide){
-            array[i+1] = array[i];
+       double chance = (max - 0) * (double)rand() / RAND_MAX + 0;
+        array[i] = (rand() % (upper-lower + 1)) + lower;
+        if(chance >= 0.5){
+            printf("Duplikalas %d.helyen\n",i+1);
+            array[i+1]=array[i];
+            i++;
         }
     }
 }
@@ -66,6 +77,3 @@ int SetArraySize(){
 return size;
 }
 
-int genRandArray(int lower,int upper){
-return lower + rand() / (RAND_MAX / (upper - lower + 1) + 1);;
-}

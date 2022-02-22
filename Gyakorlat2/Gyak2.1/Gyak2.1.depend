@@ -5,3 +5,10 @@
 	<time.h>
 	<stdbool.h>
 
+1645554808 source:d:\egyetem\github\parhuzamosalg\gyakorlat2\gyak2.1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	<Windows.h>
+
