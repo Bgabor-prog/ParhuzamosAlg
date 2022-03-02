@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1646248489 source:d:\egyetem\github\parhuzamosalg\gyakorlat2\gyak2prefix\main.c
+	<stdio.h>
+	<stdlib.h>
+
