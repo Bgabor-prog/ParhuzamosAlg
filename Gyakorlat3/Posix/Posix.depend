@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1646415910 source:d:\egyetem\cprogramming\parhuzamosalg\harmadik_gyak\posix\main.c
+	<pthread.h>
+	<stdio.h>
+	<stdlib.h>
+	<sys/types.h>
+	<time.h>
+	<Windows.h>
+

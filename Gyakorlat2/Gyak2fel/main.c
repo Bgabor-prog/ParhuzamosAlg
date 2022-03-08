@@ -7,7 +7,6 @@ int genRandArray(int lower,int upper);
 int SetArraySize();
 void UploadArray(int array[],int size,int lower,int upper);
 bool DuplicateElement();
-double setChanceForDupl(double upper);
 void UniqueArray(int array[],int size);
 
 int main()
@@ -30,6 +29,7 @@ int main()
     return 0;
 }
 
+//tömb elemeinek egyediségének vizsgálata
 void UniqueArray(int array[],int size){
     int db = 0;
     bool unique = false;
@@ -52,7 +52,7 @@ void UniqueArray(int array[],int size){
     }
 }
 
-
+//tömb feltöltés duplikálás eldöntésével
 void UploadArray(int array[],int size,int lower,int upper){
     bool decide = false;
     srand((unsigned int)time(NULL));
@@ -76,6 +76,7 @@ int SetArraySize(){
 return size;
 }
 
+//random szám generátor
 int genRandArray(int lower,int upper){
 return lower + rand() / (RAND_MAX / (upper - lower + 1) + 1);;
 }
